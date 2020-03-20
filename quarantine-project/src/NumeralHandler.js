@@ -7,10 +7,9 @@
  */
 function shiftRight(num, places) {
     let numStr = '' + num;
-    let digits = numStr.length;
     let result = numStr;
 
-    for (i = 0; i < places - digits; i++)
+    for (i = 0; i < places; i++)
         result = '0' + result;
 
     return result;
