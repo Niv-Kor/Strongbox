@@ -14,7 +14,8 @@ function encode(msg) {
 
     for (let i in msg) {
         let charCode = msg.charCodeAt(i);
-        decimalList.push(NumeralHandler.shiftRight(charCode, 3));
+        let len = ('' + charCode).length;
+        decimalList.push(NumeralHandler.shiftRight(charCode, 3 - len));
     }
 
     return decimalList;
