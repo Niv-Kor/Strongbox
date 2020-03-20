@@ -32,6 +32,9 @@
 </template>
 
 <script>
+const NICKNAME_REGEX = new RegExp('^([0-9A-Za-z_-]{4,25}$)');
+const ROOM_REGEX = new RegExp('^([0-9A-Za-z_-]{4,30}$)');
+
 export default {
     data() {
         return {
@@ -49,10 +52,10 @@ export default {
     },
     methods: {
         isNicknameValid: function() {
-            return this.nickname;
+            return this.nickname && NICKNAME_REGEX.test(this.nickname);
         },
         isRoomValid: function() {
-            return this.room;
+            return this.room && ROOM_REGEX.test(this.room);
         },
     }
 }

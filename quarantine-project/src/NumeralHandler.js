@@ -7,10 +7,22 @@
  */
 function shiftRight(num, places) {
     let numStr = '' + num;
+    let digits = numStr.length;
     let result = numStr;
 
-    for (i = 0; i < places; i++)
+    for (i = 0; i < places - digits; i++)
         result = '0' + result;
 
     return result;
+}
+
+/**
+ * Generate a random number within a range.
+ * 
+ * @param {Number} from - Minimum number in the range (inclusive)
+ * @param {Number} to - Maximum number in the range (inclusive)
+ * @returns {Number} A random number within the range.
+ */
+function rng(from, to) {
+    return Math.floor(Math.random() * to) + from;
 }
