@@ -64,12 +64,12 @@ export default {
 }
 
 .v-text-field {
-    width: 75%;
-    left: 12%;
+    width: 50%;
+    left: 24%;
 }
 
 .v-btn {
     margin-top: 10%;
-    left: 42.5%;
+    left: 44.5%;
 }
 </style>
