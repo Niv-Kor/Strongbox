@@ -1,4 +1,4 @@
-# quarantine-project
+# Strongbox
 
 ## Project setup
 ```
