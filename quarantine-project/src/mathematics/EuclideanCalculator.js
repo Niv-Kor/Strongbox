@@ -1,3 +1,9 @@
+export {
+    simpleSieve,
+    primeList,
+    isPrime
+}
+
 /**
  * Finds all prime numbers smaller than a given limit.
  * 

@@ -1,4 +1,9 @@
-import NumeralHandler from './NumeralHandler'
+import * as NumeralHandler from '../mathematics/NumeralHandler'
+
+export {
+    encode,
+    decode
+}
 
 /**
  * Encode a message.
@@ -14,8 +19,7 @@ function encode(msg) {
 
     for (let i in msg) {
         let charCode = msg.charCodeAt(i);
-        let len = ('' + charCode).length;
-        decimalList.push(NumeralHandler.shiftRight(charCode, 3));
+        decimalList.push(NumeralHandler.zeroPadding(charCode, 3));
     }
 
     return decimalList;

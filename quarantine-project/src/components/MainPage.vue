@@ -32,6 +32,9 @@
 </template>
 
 <script>
+import { UserProfile } from '../profile/UserProfile';
+import * as Composer from '../decryption/Composer';
+
 const NICKNAME_REGEX = new RegExp('^([0-9A-Za-z_-]{4,25}$)');
 const ROOM_REGEX = new RegExp('^([0-9A-Za-z_-]{4,30}$)');
 
@@ -41,6 +44,16 @@ export default {
             nickname: '',
             room: ''
         }
+    },
+    created() {
+        let niv = new UserProfile('Niv');
+        let mor = new UserProfile('Mor');
+        niv.door.setEncrypterKey(mor.door.getPublicKey());
+        let message = 'Hello World!';
+        let encrypted = Composer.compose(message, niv);
+        console.log(encrypted);
+        let decrypted = Composer.decompose(encrypted, mor);
+        console.log(decrypted);
     },
     computed: {
         buttonColor() {
