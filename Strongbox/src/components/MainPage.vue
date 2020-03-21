@@ -1,33 +1,38 @@
 <template>
     <div>
-        <v-img
-            class='logo'
-            contain
-            src="../assets/logo.png"
-            aspect-ratio="1.5"
-        ></v-img>
-        <v-text-field
-            label="nickname"
-            v-model='nickname'
-            outlined
-            clearable
-            rounded
-        />
-         <v-text-field
-            label ="chat name"
-            v-model='room'
-            outlined
-            clearable
-            rounded
-        />
-        <v-btn
-            class='white--text'
-            :color='buttonColor'
-            fab
-            elevation=2
-        >
-            Go
-        </v-btn>
+        <v-flex align-center>
+            <v-img
+                class='logo'
+                contain
+                src="../assets/logo.png"
+                width=600
+                aspect-ratio="1.5"
+            ></v-img>
+            <v-text-field
+                label="Nickname"
+                v-model='nickname'
+                outlined
+                clearable
+                rounded
+            />
+            <v-text-field
+                label="Room Title"
+                width=100
+                v-model='room'
+                outlined
+                clearable
+                rounded
+            />
+            <v-layout justify-center>
+                <v-btn
+                    class='white--text'
+                    :color='buttonColor'
+                    elevation=2
+                    x-large
+                    fab
+                >Go</v-btn>
+            </v-layout>
+        </v-flex>
     </div>
 </template>
 
@@ -42,13 +47,13 @@ export default {
     data() {
         return {
             nickname: '',
-            room: ''
+            room: '',
         }
     },
     created() {
         let niv = new UserProfile('Niv');
         let mor = new UserProfile('Mor');
-        niv.door.setEncrypterKey(mor.door.getPublicKey());
+        niv.door.setCryptoKey(mor.door.getPublicKey());
         let message = 'Hello World!';
         let encrypted = Composer.compose(message, niv);
         console.log(encrypted);
@@ -76,7 +81,10 @@ export default {
 
 <style scoped>
 .logo {
-    margin: 3% 10% 3% 10%
+    flex: 1 1 100%;
+    margin: auto;
+    padding: 24px;
+    width: 100%;
 }
 
 .v-text-field {
@@ -85,7 +93,6 @@ export default {
 }
 
 .v-btn {
-    margin-top: 10%;
-    left: 44.5%;
+    margin-top: 5%;
 }
 </style>

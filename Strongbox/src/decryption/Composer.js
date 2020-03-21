@@ -30,6 +30,6 @@ function compose(msg, sender) {
 function decompose(msg, receiver) {
     let decrypted = Encrypter.decrypt(msg, receiver.door);
     let decoded = Codec.decode(decrypted);
-    receiver.door.setEncrypterKey(msg.publicKey);
+    receiver.door.setCryptoKey(msg.publicKey);
     return decoded;
 }
