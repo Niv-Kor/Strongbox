@@ -7,7 +7,7 @@
             clearable
             rounded
             prepend-icon='mdi-account'
-            color='#76D161'
+            :color='colors.primary'
         />
         <v-text-field
             label="Password"
@@ -18,14 +18,14 @@
             outlined
             clearable
             rounded
+            :color='colors.primary'
             prepend-icon='mdi-asterisk'
             @click:append='showPassword = !showPassword'
-            color='#76D161'
         />
         <v-layout justify-center>
             <v-btn
                 class='white--text'
-                color='#76D161'
+                :color='colors.primary'
                 elevation=2
                 :disabled='!valid'
                 x-large
@@ -39,8 +39,7 @@
 </template>
 
 <script>
-    const EMAIL_REGEX = /^[0-9A-Za-z_-]{1,}@[0-9A-Za-z_-]{1,}\.[0-9A-Za-z.]{1,}$/;
-    const PASSWORD_REGEX = /^[0-9A-Za-z]{8,25}$/;
+    import { mapGetters } from 'vuex';
 
     export default {
         data() {
@@ -51,16 +50,20 @@
             }
         },
         computed: {
+            ...mapGetters({
+                colors: 'colors',
+                regex: 'regex'
+            }),
             valid() {
                 return this.isEmailValid() && this.isPasswordValid();
             }
         },
         methods: {
             isEmailValid: function() {
-                return EMAIL_REGEX.test(this.email);
+                return this.regex.email.test(this.email);
             },
             isPasswordValid: function() {
-                return PASSWORD_REGEX.test(this.password);
+                return this.regex.password.test(this.password);
             },
         }
     }
