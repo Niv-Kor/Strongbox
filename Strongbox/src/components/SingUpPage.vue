@@ -35,8 +35,6 @@
             :color='colors.primary'
             @click:append='showPassword = !showPassword'
         />
-         <v-icon left>mdi-pencil</v-icon> Edit
-        
         <v-layout justify-center>
             <v-btn
                 class='white--text'
