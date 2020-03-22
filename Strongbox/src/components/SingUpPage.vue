@@ -1,7 +1,7 @@
 <template>
     <div>
         <v-text-field
-            label="Email Address"
+            label="Email"
             v-model='email'
             outlined
             clearable
@@ -21,7 +21,22 @@
             prepend-icon='mdi-asterisk'
             @click:append='showPassword = !showPassword'
             color='#76D161'
-        /> 
+        />
+          <v-text-field
+            label="PasswordAuthentication"
+            width=100
+            :type="showPassword ? 'text' : 'password'"
+            :append-icon="showPassword ? 'mdi-eye-off' : 'mdi-eye'"
+            v-model='passwordAuthentication'
+            outlined
+            clearable
+            rounded
+            prepend-icon='mdi-asterisk'
+            @click:append='showPassword = !showPassword'
+            color='#76D161'
+        />
+         <v-icon left>mdi-pencil</v-icon> Edit
+        
         <v-layout justify-center>
             <v-btn
                 class='white--text'
