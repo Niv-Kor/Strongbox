@@ -15,6 +15,7 @@ export {
  */
 function compose(msg, sender) {
     let encoded = Codec.encode(msg);
+    console.log('encoded message: ', encoded);
     let encrypted = Encrypter.encrypt(encoded, sender.door);
     encrypted.sender = (sender.name);
     return encrypted;
