@@ -15,10 +15,10 @@ export const STORE = new Vuex.Store({
         }
     },
     getters: {
-        colors: state => {
+        getColors: state => {
             return state.colors;
         },
-        regex: state => {
+        getRegex: state => {
             return state.regex;
         }
     }

@@ -51,8 +51,8 @@
         },
         computed: {
             ...mapGetters({
-                colors: 'colors',
-                regex: 'regex'
+                colors: 'getColors',
+                regex: 'getRegex'
             }),
             valid() {
                 return this.isEmailValid() && this.isPasswordValid();
