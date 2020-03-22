@@ -1,8 +1,7 @@
 <template>
     <div>
-        fdsfsdfsdf
         <v-text-field
-            label="Email"
+            label="Email Address"
             v-model='email'
             outlined
             clearable

@@ -8,8 +8,8 @@
                 width=600
                 aspect-ratio="1.5"
             ></v-img>
-            <router-view></router-view>
         </v-flex>
+        <router-view></router-view>
     </div>
 </template>
 

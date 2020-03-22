@@ -5,7 +5,7 @@ import vuetify from './plugins/vuetify';
 import { ROUTES } from './Routes';
 
 const router = new VueRouter({
-  router: ROUTES
+  routes: ROUTES
 });
 
 Vue.config.productionTip = false;
