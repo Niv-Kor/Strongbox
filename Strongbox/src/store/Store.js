@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import Auth from './modules/AuthenticationModule'
 
 Vue.use(Vuex);
 
@@ -21,5 +22,8 @@ export const STORE = new Vuex.Store({
         getRegex: state => {
             return state.regex;
         }
+    },
+    modules: {
+        Authentication: Auth
     }
 });

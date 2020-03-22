@@ -27,7 +27,7 @@
             width=100
             :type="showPassword ? 'text' : 'password'"
             :append-icon="showPassword ? 'mdi-eye-off' : 'mdi-eye'"
-            v-model='passwordAuthentication'
+            v-model='password'
             outlined
             clearable
             rounded
@@ -35,19 +35,6 @@
             :color='colors.primary'
             @click:append='showPassword = !showPassword'
         />
-        <v-layout justify-center>
-            <v-btn
-                class='white--text'
-                color='#76D161'
-                elevation=2
-                :disabled='!valid'
-                x-large
-                fab
-            >
-                <v-icon v-if='valid'>mdi-lock-open-variant</v-icon>
-                <v-icon v-else>mdi-lock</v-icon>
-            </v-btn>
-        </v-layout>
     </div>
 </template>
 
@@ -69,6 +56,11 @@
             }),
             valid() {
                 return this.isEmailValid() && this.isPasswordValid();
+            }
+        },
+        watch: {
+            valid: function(value) {
+                this.$store.dispatch('setValidation', value);
             }
         },
         methods: {
