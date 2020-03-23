@@ -1,13 +1,13 @@
 <template>
   <v-app>
     <v-content>
-      <MainPage :buttonColor='"blue"'/>
+      <main-page :buttonColor='"blue"'/>
     </v-content>
   </v-app>
 </template>
 
 <script>
-import MainPage from './components/MainPage'
+import MainPage from './components/authentication/HomePage'
 
 export default {
   name: 'App',

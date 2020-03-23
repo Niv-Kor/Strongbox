@@ -4,7 +4,7 @@
             <v-img
                 class='logo'
                 contain
-                src="../assets/logo.png"
+                src="../../assets/logo.png"
                 width=400
                 aspect-ratio="1.5"
             ></v-img>
