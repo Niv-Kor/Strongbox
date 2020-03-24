@@ -63,14 +63,14 @@
     .info-p {
         display: block;
         text-align: center;
-        margin-top: 8%;
+        margin-top: 6%;
         font-size: 30px;
         font-family: 'Comfortaa';
 
     }
 
     .periods {
-        display: inline;
+        margin-top: -2%;
         font-size: 60px;
     }
 

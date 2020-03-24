@@ -88,6 +88,7 @@
     .logo {
         flex: 1 1 100%;
         margin: auto;
+        margin-bottom: 3%;
         padding: 24px;
         width: 100%;
     }
@@ -103,10 +104,6 @@
 
     .signup-btn {
         bottom: 10px;
-    }
-
-    .router-view {
-        margin-top: 7%;
     }
 
     .unlock-btn {

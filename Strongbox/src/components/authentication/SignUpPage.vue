@@ -76,8 +76,8 @@
 
 <style scoped>
 .v-text-field {
-    width: 50%;
-    left: 24%;
+    width: 60%;
+    left: 19%;
 }
 
 .v-btn {
