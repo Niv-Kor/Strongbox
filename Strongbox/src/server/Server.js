@@ -4,11 +4,11 @@ const SERVER = HTTP.createServer();
 const IO = require('socket.io').listen(SERVER);
 const SERVER_PORT = 19200;
 const DB_CONFIG = {
-    server: 'localhost',
-    database: '',
-    user: '',
-    password: '',
-    port: 1434
+    server: 'sql5053.site4now.net',
+    database: 'DB_A56D45_Strongbox',
+    user: 'DB_A56D45_Strongbox_admin',
+    password: 'P2413567cu221',
+    port: 1433
 }
 
 function runQuery(query) {
@@ -38,6 +38,10 @@ IO.on('connection', socket => {
 });
 
 SERVER.listen(SERVER_PORT, function(error) {
+    MSSQL.connect(DB_CONFIG).then(() => {
+        console.log("WOW!");
+    }).catch(err => console.log("aw.."));
+
     if (error) console.log('Server Startup Error: ' + err);
     else console.log('Server is listening to port ' + SERVER_PORT);
 })
