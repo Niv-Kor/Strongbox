@@ -8,8 +8,8 @@ const ERR_PREFIX = '\n!---ERROR: '
 const ERR_SUFFIX = '!---\n'
 const DB_CONFIG = {
     server: 'sql5053.site4now.net',
-    database: 'DB_A56D45_Strongbox',
-    user: 'DB_A56D45_Strongbox_admin',
+    database: 'DB_A56FAB_strongbox',
+    user: 'DB_A56FAB_strongbox_admin',
     password: 'P2413567cu221',
     port: 1433,
     options: {
